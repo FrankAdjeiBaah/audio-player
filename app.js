@@ -1,5 +1,5 @@
 const songs = ["music/Blues Saraceno  Dogs of War.mp3","music/Blues Saraceno - Devils Got You Beat.mp3","music/Blues Saraceno - Outlaw Justice.mp3"];
-const poster = ["images/Poster1.jpg","images/Poster2.jpg","images/Poster3.jpg"];
+const poster = ["images/poster1.jpg","images/poster2.jpg","images/poster3.jpg"];
 const songTitle = document.getElementById("songTitle");
 const fillBar = document.getElementById("fill");
 let time = document.getElementById('time');
