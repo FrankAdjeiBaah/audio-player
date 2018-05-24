@@ -26,7 +26,8 @@ body{
     z-index: 99;
 }
 #main{
-    width: 25%;
+    width: 300px;
+    height: 400px;
     background-color:#fff;
     border-radius: 15px;
     position: absolute;
@@ -36,70 +37,70 @@ body{
     z-index: 999;
 }
 #image img{
-    height: 180px;
+    height: 200px;
     width: 100%;
-    margin-top: -5px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
 #player{
     padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     color:#333;
 }
 #songTitle{
-    width:300px;
     text-align: center;
     font-family: monospace;
     font-size: 18px;
-    position: absolute;
-    top:58%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    display: flex;
+    position: relative; 
     width: 100%;
 }
 #time{
-    text-align: center;padding-bottom: 10px;
-    margin-top: -11px; 
+    text-align: center;
+    padding-bottom: 10px;
 }
 #buttons{
     height: 50px;
     width: 100%;
-    margin-top: 50px;
-    position:relative;
-    top:10%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
 }
 #play,#next,#pre{
     width: 50px;
     height: 50px;
     border: 0;
-    background-color:royalblue;
+    background-color: #4169E1;
     border-radius: 50%;
     outline: none;
     cursor: pointer;
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    position: relative;
+    padding: 2px;
+    transition: all .3s ease;
+}
+#play {
+    width: 60px;
+    height: 60px;
 }
 #next{
-    width: 30px;
-    height: 30px;
-    left: 70%;
+    margin-left: -12px; 
 }
 #pre{
-    width: 30px;
-    height: 30px;
-    left: 30%;
+    margin-right: -12px; 
 }
-#play img,#next img,#pre img{
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+#play img{
+    width: 45px;
+    height: 45px;
 }
+#next img,
+#pre img{
+    width: 40px;
+    height: 40px;
+}
+
 #seek-bar{
     width: 90%;
     margin: auto auto;
@@ -122,18 +123,3 @@ body{
     margin-left: -5px;
     transform: scale(2);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
