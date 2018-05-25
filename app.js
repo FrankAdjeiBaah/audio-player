@@ -1,5 +1,5 @@
 // 
-// Creating the Markup
+// Building Markup
 // 
 
 // Decalaring variables
@@ -33,18 +33,15 @@ mainPlayer.id = 'player';
 // element inside mainImage
 let image = createEl('img');
 image.src = 'images/poster1.jpg';
-
 main.appendChild(mainImage);
 mainImage.appendChild(image);
 
 // Player Div ID
-
 main.appendChild(mainPlayer);
 let songTitle = createEl('div');
 songTitle.id = 'songTitle';
 // For testing and visual
 songTitle.innerHTML  = 'WE ROCK FOREEVEr';
-
 mainPlayer.appendChild(songTitle);
 
 // Buttons Container
@@ -82,6 +79,7 @@ play.appendChild(playImg);
 // Append Timer Div inside #player container
 let time = createEl('div');
 time.id = 'time';
+time.innerHTML = '0s / 0s';
 player.appendChild(time);
 
 // Create seekbar
@@ -94,7 +92,6 @@ let fillBar = createEl('div');
 let handle = createEl('div');
 fillBar.id = 'fill';
 handle.id = 'handle';
-
 seekbar.appendChild(fillBar);
 seekbar.appendChild(handle);
 
@@ -102,24 +99,22 @@ seekbar.appendChild(handle);
 function createEl(text){
     return document.createElement(text);
 }
+
 // 
 //  Functionality
 // 
 
-
-
 // Declaring Variables
-
 const songs = ["music/Blues Saraceno  Dogs of War.mp3","music/Blues Saraceno - Devils Got You Beat.mp3","music/Blues Saraceno - Outlaw Justice.mp3"];
 const poster = ["images/poster1.jpg","images/poster2.jpg","images/poster3.jpg"];
 let song = new Audio();
 let currentSong = 0;    // it point to the current song
-// Might remove it to be paused on load
-window.onload = playSong;   // it will call the function playSong when window is load
+playSong();
+playImg.src = 'images/Pause.png';  
 
-pre.addEventListener('click', preSong());
-next.addEventListener('click', nextSong());
-play.addEventListener('click', playOrPauseSong());
+pre.addEventListener('click', preSong);
+next.addEventListener('click', nextSong);
+play.addEventListener('click', playOrPauseSong);
 
 // Play a song with currentIndex
 function playSong(){
@@ -130,11 +125,12 @@ function playSong(){
 
 // Function for Play/Pause a song
 function playOrPauseSong(){
+    // If its paused and clicked to play
     if(song.paused){
         song.play();
         $("#play img").attr("src","images/Pause.png");
     }
-    else{
+    else{ // if its playing and clicked to pause
         song.pause();
         $("#play img").attr("src","images/Play.png");
     }
@@ -170,12 +166,25 @@ function nextSong(){
 }
 // previous song
 function preSong(){
+    // Take one fromo the index 
     currentSong--;
+    // If its less than 0 go back to 2
     if(currentSong < 0){
         currentSong = 2;
     }
+    // Start the song
     playSong();
+    // Assign images
     $("#play img").attr("src","images/Pause.png");
     $("#image img").attr("src",poster[currentSong]);
     $("#bg img").attr("src",poster[currentSong]);
 }
+
+
+
+// Test for Playlist
+// let playlistContainer = createEl('div');
+// playlistContainer.id = 'playlistContainer';
+// UIplayer.appendChild(playlistContainer);
+
+
