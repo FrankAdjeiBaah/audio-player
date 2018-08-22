@@ -179,12 +179,3 @@ function preSong(){
     $("#image img").attr("src",poster[currentSong]);
     $("#bg img").attr("src",poster[currentSong]);
 }
-
-
-
-// Test for Playlist
-// let playlistContainer = createEl('div');
-// playlistContainer.id = 'playlistContainer';
-// UIplayer.appendChild(playlistContainer);
-
-
